@@ -30,9 +30,23 @@ function capitalizedCase(text) {
     var textChanged = text.toLowerCase().replace(/(?:^|\s)\S/g, function(a) {
         return a.toUpperCase();
     });
-    //return subst;
     return document.getElementById('content').value = textChanged;
 }
+
+//05-aLtErNaTiNg cAsE
+function alternating() {
+    var text = document.getElementById('content').value;
+    const textChanged = text
+    .split("")
+    .map(c => (c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase()))
+    .join("");
+    return document.getElementById('content').value = textChanged;
+      
+    //alert(text);
+    //console.log(text);
+    //console.log(textChanged);
+}
+               
 
 
     
