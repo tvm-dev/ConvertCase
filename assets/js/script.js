@@ -46,7 +46,54 @@ function alternating() {
     //console.log(text);
     //console.log(textChanged);
 }
-               
+
+//08-Download Text
+function downloadText(textToWrite, fileNameToSaveAs)
+    {
+    	var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'}); 
+    	var downloadLink = document.createElement("a");
+    	downloadLink.download = fileNameToSaveAs;
+    	downloadLink.innerHTML = "Download File";
+    	if (window.webkitURL != null)
+    	{
+    		// Chrome allows the link to be clicked
+    		// without actually adding it to the DOM.
+    		downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+    	}
+    	else
+    	{
+    		// Firefox requires the link to be added to the DOM
+    		// before it can be clicked.
+    		downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+    		downloadLink.onclick = destroyClickedElement;
+    		downloadLink.style.display = "none";
+    		document.body.appendChild(downloadLink);
+    	}
+    
+    	downloadLink.click();
+    }
+
+//09--Copy text to Clipboard
+function copyToClipboard() {
+    
+    let copytext = document.getElementById('content');
+    copytext.select();
+    copytext.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    //alert("Your text is " + copytext.value);
+    var copied = document.getElementById('copied');
+    copied.innerHTML = '<br><b>Text copied to clipboard </b>'
+
+    setTimeout(function(){
+        var msg = document.getElementById('copied');
+        msg.style = "display:none"
+//     $('#copied').fadeOut('fast');   
+       
+    }, 3000);
+
+}
+
+
 
 
     
