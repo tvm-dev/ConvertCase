@@ -1,4 +1,33 @@
-//01-Sentence-OK
+const base = "Brasil";
+//document.getElementById('content').value = base;
+
+function counterAll(obj) {
+       
+//Count Character OK
+document.getElementById('countChar').innerHTML = "Character Count: " + obj.value.length;
+    
+//Count Words
+var words = document.getElementById("content").value;
+var count = 0;
+var split = words.split(' ');
+for (i = 0; i < split.length; i++) {
+    if (split[1] != "") {
+        count += 1;
+    }
+}
+document.getElementById("countWords").innerHTML = "| Words Count: " + count;
+console.log(count); 
+
+//Count Lines ?
+
+
+
+   
+   
+}
+
+
+//Sentence-OK
 function Sentence() {
     ////pegar content do textarea
     var text = document.getElementById('content').value;  
@@ -9,21 +38,21 @@ function Sentence() {
     document.getElementById('content').value = textChanged;
 }
 
-//02-Lower-OK
+//Lower-OK
 function Lower() {
     var text = document.getElementById('content').value;
     var textChanged = (text.toLowerCase());
     document.getElementById('content').value = textChanged;
 }
 
-//03-Upper-OK
+//Upper-OK
 function Upper() {
     var text = document.getElementById('content').value;
     var textChanged = (text.toUpperCase());
     document.getElementById('content').value = textChanged;
 }
 
-//04-CapitalizedCase (1º letra de cada palavra em maiúscula)
+//CapitalizedCase (1º letra de cada palavra em maiúscula)
 function capitalizedCase(text) {
     
     var text = document.getElementById('content').value;
@@ -33,21 +62,64 @@ function capitalizedCase(text) {
     return document.getElementById('content').value = textChanged;
 }
 
-//05-aLtErNaTiNg cAsE
-function alternating() {
+//aLtErNaTiNg cAsE
+//Change every letter, no space, in sequence, to your opposite type
+function alternatingCase() {
+    //alert('Hi');
+
+
+
+
+
+
+
+
+
+
+
+       
+}
+
+
+//Reverse Word: To intert all words: amor -> roma.
+function reverseWord(){
+   var text =  document.getElementById('content').value;
+   var textChanged = text.split("").reverse("").join("");
+   return document.getElementById('content').value = textChanged;
+    
+
+
+       
+}
+//TitleCase: delete: convert all, except "a, an, is, are, etc"
+function titleCase () {
+
+}
+//InVeRsE CaSe
+function inverseCase() {
     var text = document.getElementById('content').value;
     const textChanged = text
     .split("")
     .map(c => (c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase()))
     .join("");
     return document.getElementById('content').value = textChanged;
-      
-    //alert(text);
-    //console.log(text);
-    //console.log(textChanged);
+       
 }
 
-//08-Download Text
+
+//Comma space: insert space and comma in the words
+function commaSpace() {
+    var text = document.getElementById('content').value;
+    //var textChanged = text.split("").reverse().join().split(" ").reverse().join(" ")
+    var textChanged = text.split("");
+    
+    document.getElementById('content').value = textChanged;
+
+
+}
+
+
+//Download Text
 function downloadText(textToWrite, fileNameToSaveAs)
     {
     	var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'}); 
@@ -73,7 +145,7 @@ function downloadText(textToWrite, fileNameToSaveAs)
     	downloadLink.click();
     }
 
-//09--Copy text to Clipboard
+//Copy text to Clipboard
 function copyToClipboard() {
     
     let copytext = document.getElementById('content');
@@ -87,31 +159,41 @@ function copyToClipboard() {
     setTimeout(function(){
         var msg = document.getElementById('copied');
         msg.style = "display:none"
-//     $('#copied').fadeOut('fast');   
-       
+   
     }, 3000);
 
 }
 
-
-
-
-    
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-//10-Clean OK
+//Clean OK
 function Clean() {
     document.getElementById('content').value = '';
+    document.location.reload(true);
 }
+
+//SpaceLetters
+function spaceLetters() {
+    var text =  document.getElementById('content').value;
+    var textChanged = text.split('').map(function (item){
+        return item.split('').reverse().join();
+    }).join(' ');
+    document.getElementById('content').value = textChanged;
+    
+}
+
+
+//Tests
+function a() {
+    var text =  document.getElementById('content').value;
+    var count = text.length;
+    
+
+
+
+   
+
+
+
+    document.getElementById('content').value = textChanged;
+    
+}
+
