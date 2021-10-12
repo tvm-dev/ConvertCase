@@ -1,8 +1,8 @@
-const base = "Brasil";
+//const base = "Brasil";
 //document.getElementById('content').value = base;
 
 function counterAll(obj) {
-       
+      
 //Count Character OK
 document.getElementById('countChar').innerHTML = "Character Count: " + obj.value.length;
     
@@ -16,16 +16,20 @@ for (i = 0; i < split.length; i++) {
     }
 }
 document.getElementById("countWords").innerHTML = "| Words Count: " + count;
-console.log(count); 
 
 //Count Lines ?
+var el = document.getElementById('content');
+lineCount = 0;
+var lines = el.value.split("\n");
 
+for (var i = 0; i <lines.length; i++) {
+    if (lines[i].length > 0 ) lineCount++;
+    }
+    console.log(lineCount);
+    //document.getElementById('countLines').value = lineCount;
+    document.getElementById("countLines").innerHTML = "| Line Count: " + lineCount;
 
-
-   
-   
 }
-
 
 //Sentence-OK
 function Sentence() {
@@ -62,24 +66,33 @@ function capitalizedCase(text) {
     return document.getElementById('content').value = textChanged;
 }
 
-//aLtErNaTiNg cAsE
+//aLtEr cAsE
 //Change every letter, no space, in sequence, to your opposite type
-function alternatingCase() {
-    //alert('Hi');
+function alterCase() {
+    
+    var str = document.getElementById('content').innerHTML, str2 = '';
+
+    for (var i = 0; i < str.length; i++ ) {
+        if (str.charAt(i) === str.charAt(i).toLowerCase()) {
+            str2 += str.charAt(i).toUpperCase();
+        } else if (str.charAt(i) === str.charAt(i).toUpperCase()) {
+                 str2 += str.charAt(i).toLowerCase()
+        } else {
+            str2 += str.charAt(i);
+        }
+    }
+    //console.log(str2, "After");
+    //console.log(str2);
+    document.getElementById('content').value = str2;
+
+
+   
 
 
 
 
 
-
-
-
-
-
-
-       
 }
-
 
 //Reverse Word: To intert all words: amor -> roma.
 function reverseWord(){
@@ -95,7 +108,7 @@ function reverseWord(){
 function titleCase () {
 
 }
-//InVeRsE CaSe
+//InVeRsE CaSe: what is upper, the code convert in lower, and vice-versa!
 function inverseCase() {
     var text = document.getElementById('content').value;
     const textChanged = text
@@ -180,20 +193,22 @@ function spaceLetters() {
     
 }
 
+//Tests
+function removeSpaces() {
+
+    var text = document.getElementById('content').value;
+    var newText = text.replace(/\s/g, '');
+   return document.getElementById('content').value = newText;
+
+}
+
 
 //Tests
 function a() {
-    var text =  document.getElementById('content').value;
-    var count = text.length;
-    
 
+    var text = document.getElementById('content').value;
+    var newText = text.replace(/\s/g, '');
+   return document.getElementById('content').value = newText;
 
-
-   
-
-
-
-    document.getElementById('content').value = textChanged;
-    
 }
 

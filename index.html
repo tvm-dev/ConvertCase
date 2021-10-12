@@ -94,24 +94,13 @@
 
   
     
-        <textarea class="form-control" rows="10" id="content" placeholder="Type ou past your content here" onkeyup="counterAll(this);"></textarea>
+        <textarea class="form-control" rows="10" id="content" placeholder="Type ou past your content here" onkeyup="counterAll(this);" autofocus></textarea>
         <span class="text-muted pull-left" id="countChar"></span>
         <span class="text-muted pull-left" id="countWords"></span>
         <span class="text-muted pull-left" id="countLines"></span>
     
-
-
-
         <p id="copied"></p>
 
-
-<!--
-    <div class="counterAll">
-      Character Count: <span id="charCount">0</span>
-    | Word Count: <span id="wordCount">0</span>
-    | Line Count: <span id="lineCount">0</span>
-  
-  </div>-->
     <hr>
     <!--Buttons-->
     <button onclick="Sentence()" id="btnClick" type="button" class="btn btn-primary" alt="teste">Sentence case</button>
@@ -119,8 +108,12 @@
     <button onclick="Upper()" type="button" class="btn btn-success">UPPER CASE</button>
     <button onclick="capitalizedCase()" type="button" class="btn btn-danger">Capitalized Case</button>
    
-   
-    <button onclick="alternatingCase()" type="button" class="btn btn-warning">aLtErNaTiNg cAsE ???</button>
+  <!--
+    <button onclick="alterCase()" type="button" class="btn btn-warning">aLtErNaTiNg cAsE ???</button> -->
+
+
+
+
     
     <!--
     <button onclick="titleCase()" type="button" class="btn btn-info">Title Case</button>
@@ -131,7 +124,10 @@
     
     <button onclick="spaceLetters()" type="button" class="btn btn-info">Space Letters</button>
 
-    <button onclick="invertLetters()" type="button" class="btn btn-outline-danger">Revert Letters ???</button>
+    <button onclick="removeSpaces()" type="button" class="btn btn-outline-info">Remove Spaces</button>
+
+    <!--
+    <button onclick="invertLetters()" type="button" class="btn btn-outline-danger">Revert Letters ???</button>-->
 
     <button onclick="commaSpace()" type="button" class="btn btn-outline-dark">Comma Space</button>
     
@@ -149,77 +145,13 @@
     
 
     <button onclick="a()" type="button" class="btn btn-dark">Button</button>
-
+    <p id="teste"></p>
 
 
     
     <!--end buttons-->
   </div>
-  <hr>
-
-  <!--
-  <div class="cards_all">
-  
-    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-      <div class="card-header">Header</div>
-      <div class="card-body">
-        <h5 class="card-title">Primary card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
     </div>
-    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-      <div class="card-header">Header</div>
-      <div class="card-body">
-        <h5 class="card-title">Secondary card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-    <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-      <div class="card-header">Header</div>
-      <div class="card-body">
-        <h5 class="card-title">Success card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-    <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
-      <div class="card-header">Header</div>
-      <div class="card-body">
-        <h5 class="card-title">Danger card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-    <div class="card text-dark bg-warning mb-3" style="max-width: 18rem;">
-      <div class="card-header">Header</div>
-      <div class="card-body">
-        <h5 class="card-title">Warning card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-    <div class="card text-dark bg-info mb-3" style="max-width: 18rem;">
-      <div class="card-header">Header</div>
-      <div class="card-body">
-        <h5 class="card-title">Info card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-    <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
-      <div class="card-header">Header</div>
-      <div class="card-body">
-        <h5 class="card-title">Light card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-      <div class="card-header">Header</div>
-      <div class="card-body">
-        <h5 class="card-title">Dark card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-
-
-
-  </div>-->
 </main>
 
 
