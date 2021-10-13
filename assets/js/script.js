@@ -68,7 +68,7 @@ function capitalizedCase(text) {
 
 //aLtEr cAsE
 //Change every letter, no space, in sequence, to your opposite type
-function alterCase() {
+/* function alterCase() {
     
     var str = document.getElementById('content').innerHTML, str2 = '';
 
@@ -93,16 +93,13 @@ function alterCase() {
 
 
 }
-
+ */
 //Reverse Word: To intert all words: amor -> roma.
 function reverseWord(){
    var text =  document.getElementById('content').value;
    var textChanged = text.split("").reverse("").join("");
    return document.getElementById('content').value = textChanged;
     
-
-
-       
 }
 //TitleCase: delete: convert all, except "a, an, is, are, etc"
 function titleCase () {
@@ -128,9 +125,7 @@ function commaSpace() {
     
     document.getElementById('content').value = textChanged;
 
-
 }
-
 
 //Download Text
 function downloadText(textToWrite, fileNameToSaveAs)
@@ -193,7 +188,7 @@ function spaceLetters() {
     
 }
 
-//Tests
+//Remove spaces from words, etc
 function removeSpaces() {
 
     var text = document.getElementById('content').value;
