@@ -1,6 +1,9 @@
-//const base = "Brasil";
-//document.getElementById('content').value = base;
+//Year
+var date = new Date();
+year = date.getFullYear();
+document.getElementById('year').innerText = date.getFullYear();
 
+//CounterAll Function
 function counterAll(obj) {
       
 //Count Character OK
